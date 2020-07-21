@@ -1,0 +1,24 @@
+<h2>Delete page</h2>
+
+{{#if todos.length}}
+<ul>
+  {{#each todos}}
+  <li class="todo">
+    <form action="/delete" method="POST">
+      <label>
+       
+        <input type="checkbox"  name="deleted">
+        <span class="deleted">{{this.title}}</span>
+        
+
+        <input type="hidden" value="{{this._id}}" name="id"> 
+
+        <button class="btn btn-small" type="submit">Delete</button>
+      </label>
+    </form>
+  </li>
+  {{/each}}
+</ul>
+{{else}}
+<p>No todos!</p>
+{{/if}}
